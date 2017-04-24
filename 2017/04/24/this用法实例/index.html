@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://gj201314.github.io">
-  <title>Tag: hexo | 郭杰的博客</title>
+  <title>this用法实例 | 郭杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎大家来到我的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="郭杰的博客">
-<meta property="og:url" content="https://gj201314.github.io/tags/hexo/index.html">
+  <meta name="description" content="这篇文章主要介绍了JS函数this的用法,实例分析了javascript中this的功能、定义及相关使用技巧,需要的朋友可以参考下">
+<meta name="keywords" content="js,this,this用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this用法实例">
+<meta property="og:url" content="https://gj201314.github.io/2017/04/24/this用法实例/index.html">
 <meta property="og:site_name" content="郭杰的博客">
-<meta property="og:description" content="欢迎大家来到我的博客">
+<meta property="og:description" content="这篇文章主要介绍了JS函数this的用法,实例分析了javascript中this的功能、定义及相关使用技巧,需要的朋友可以参考下">
+<meta property="og:updated_time" content="2017-04-24T03:46:09.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭杰的博客">
-<meta name="twitter:description" content="欢迎大家来到我的博客">
+<meta name="twitter:title" content="this用法实例">
+<meta name="twitter:description" content="这篇文章主要介绍了JS函数this的用法,实例分析了javascript中this的功能、定义及相关使用技巧,需要的朋友可以参考下">
   
     <link rel="alternative" href="/atom.xml" title="郭杰的博客" type="application/atom+xml">
   
@@ -161,75 +163,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-this用法实例" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/hexo搭建个人博客/" class="archive-article-date">
-  	<time datetime="2017-04-18T10:06:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/hexo搭建个人博客/">hexo搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      this用法实例
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/24/this用法实例/" class="archive-article-date">
+  	<time datetime="2017-04-24T03:13:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>本文实例讲述了JS函数this的用法。分享给大家供大家参考。具体如下：<br>在js中写函数时，很多用到this. this究竟是什么,this是个关键字，是个指针，指向执行环境作用域，也称之为上下文。</p>
+<a id="more"></a>
+<p>先说下函数吧，个人理解是函数是在语言中重复调用的代码块.<br>在JS里，把函数赋值给对象的属性时，称之为方法,如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m=&#123;&#125;;</div><div class="line">m.title=<span class="string">'title'</span>;</div><div class="line">m.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.title)</div><div class="line">&#125;</div><div class="line">m.show()</div></pre></td></tr></table></figure></p>
+<p>就是把函数作为对象m的方法来调用<br>这样的话，this指向的就是m这个对象.<br>直接调函数名的叫函数：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">1212</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(a)<span class="comment">//1212</span></div><div class="line">&#125;</div><div class="line">show()<span class="comment">// 1212</span></div></pre></td></tr></table></figure></p>
+<p>在全局环境里，可以把全局变量理解为&nbsp;<code>window</code>&nbsp;的属性，全局函数为&nbsp;<code>window</code>&nbsp;的方法<br>看下面的例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m =&#123;&#125;;</div><div class="line">m.id=<span class="string">'mmm'</span>;</div><div class="line">m.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.id);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a=&#123;&#125;;</div><div class="line">a.id=<span class="string">'aaa'</span>;</div><div class="line">a.show=m.show;</div><div class="line">a.show(); <span class="comment">//aaa</span></div><div class="line"></div><div class="line">a.show=m.show;  先理解这句话，因为函数是个对象，</div><div class="line">m.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.id)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这表达式相当于a.show 与m.show同时引用指向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.id)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其实相当于<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.id)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>所以调用a.show()时，this指向的是a对象,<br>再看以下一个栗子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m =&#123;&#125;;</div><div class="line">m.id=<span class="string">'mmm'</span></div><div class="line">m.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.id)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a=&#123;&#125;</div><div class="line">a.id=<span class="string">'aaa'</span></div><div class="line">a.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  m.show()</div><div class="line">&#125;;</div><div class="line">a.show(); <span class="comment">//mmm</span></div></pre></td></tr></table></figure></p>
+<p>所以调用a.show()时，相当于调用了m.show()的方法,所以this.指向的是m对象。<br>再看以下一个例子，一开始还是不很懂<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color=<span class="string">'red'</span>;</div><div class="line"><span class="keyword">var</span> app = &#123;&#125;;</div><div class="line">app.color=<span class="string">"green"</span>;</div><div class="line">app.paint=<span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">node.style.color=<span class="keyword">this</span>.color;</div><div class="line">  alert(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findNode</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> btn =<span class="built_in">document</span>.querySelector(<span class="string">'.btn'</span>);</div><div class="line">  callback(btn);<span class="comment">//传进来，</span></div><div class="line">&#125;</div><div class="line">findNode(app.paint);</div><div class="line">alert(<span class="keyword">this</span>.color); <span class="comment">//red 而不是green</span></div></pre></td></tr></table></figure></p>
+<p>函数传参时，是按值传参的，而不是引用<br>所以findNode(app.paint);传进来时，其实是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">  node.style.color=<span class="keyword">this</span>.color;</div><div class="line">  alert(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>的引用,又因为findNode是全局定义的，所以this指向&nbsp;<code>WINDOW OR UNDEFINED</code>&nbsp;;<br>关于传参，按值传递过去的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  alert(a)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>参数为基本数据类型时好理解<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> b=<span class="number">10</span>;</div><div class="line">show(b)<span class="comment">//alert(10);</span></div></pre></td></tr></table></figure></p>
+<p>至于对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c =&#123;&#125;;</div><div class="line">c.prop=<span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> showProp=<span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  obj.prop=<span class="literal">false</span></div><div class="line">&#125;</div><div class="line">showProp(c); <span class="comment">//c.prop = false</span></div></pre></td></tr></table></figure></p>
+<p>有些人觉得是上面例子是按引用传参<br>其实上面还是按值传参,<code>showProp(c)</code>&nbsp;把c传进函数里时，c其实相当于一个引用, 函数里对&nbsp;<code>obj.prop=false</code>&nbsp;,相当于对引用的对象 改成&nbsp;<code>{prop:false}</code>&nbsp;</p>
+<p>再看下面一例子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c =&#123;&#125;;</div><div class="line">c.prop=<span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> showProp=<span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">  obj.prop=<span class="literal">false</span></div><div class="line">  <span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line">showProp(c);</div><div class="line">alert(c.prop); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>里明明把传入obj修改了，如果按照函数按引用传参，函数里面的修改肯定会反映到外部<br>来源地址：<a href="http://www.jb51.net/article/60804.htm" target="_blank" rel="external">http://www.jb51.net/article/60804.htm</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">搭建hexo个人博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">this</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">this用法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hexo/" class="article-tag-list-link color5">hexo</a>
+        			<a href="/categories/js-this/" class="article-tag-list-link color3">js-this</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://gj201314.github.io/2017/04/24/this用法实例/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2017/04/24/this详解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          this详解
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+
+  
+  
+    <div class="duoshuo"></div>
+  
 
 
           </div>
@@ -253,9 +376,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

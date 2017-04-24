@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://gj201314.github.io">
-  <title>Tag: hexo | 郭杰的博客</title>
+  <title>this详解 | 郭杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎大家来到我的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="郭杰的博客">
-<meta property="og:url" content="https://gj201314.github.io/tags/hexo/index.html">
+  <meta name="description" content="this是Javascript语言的一个关键字它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用,下面分四种情况，详细讨论this的用法，感兴趣的朋友可以了解下">
+<meta name="keywords" content="js,this,this指向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this详解">
+<meta property="og:url" content="https://gj201314.github.io/2017/04/24/this详解/index.html">
 <meta property="og:site_name" content="郭杰的博客">
-<meta property="og:description" content="欢迎大家来到我的博客">
+<meta property="og:description" content="this是Javascript语言的一个关键字它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用,下面分四种情况，详细讨论this的用法，感兴趣的朋友可以了解下">
+<meta property="og:updated_time" content="2017-04-24T03:35:00.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭杰的博客">
-<meta name="twitter:description" content="欢迎大家来到我的博客">
+<meta name="twitter:title" content="this详解">
+<meta name="twitter:description" content="this是Javascript语言的一个关键字它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用,下面分四种情况，详细讨论this的用法，感兴趣的朋友可以了解下">
   
     <link rel="alternative" href="/atom.xml" title="郭杰的博客" type="application/atom+xml">
   
@@ -161,75 +163,200 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-this详解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/hexo搭建个人博客/" class="archive-article-date">
-  	<time datetime="2017-04-18T10:06:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/hexo搭建个人博客/">hexo搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      this详解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/24/this详解/" class="archive-article-date">
+  	<time datetime="2017-04-24T03:12:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>this是Javascript语言的一个关键字。<br>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如，<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象。</p>
+<p>下面分四种情况，详细讨论this的用法。<br><a id="more"></a></p>
+<h2 id="纯粹的函数调用"><a href="#纯粹的函数调用" class="headerlink" title="纯粹的函数调用"></a>纯粹的函数调用</h2><p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象&nbsp;<code>Global</code>。</p>
+<p>请看下面这段代码，它的运行结果是1。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">　　　alert(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line">test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>为了证明this就是全局对象，我对代码做一些改变：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　alert(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line">test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>运行结果还是1。再变一下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　<span class="keyword">this</span>.x = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">test();</div><div class="line">alert(x); <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<h2 id="作为对象方法的调用"><a href="#作为对象方法的调用" class="headerlink" title="作为对象方法的调用"></a>作为对象方法的调用</h2><p>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　alert(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">o.x = <span class="number">1</span>;</div><div class="line">o.m = test;</div><div class="line">o.m(); <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<h2 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h2><p>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</div><div class="line">alert(o.x); <span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　  <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</div><div class="line">alert(x); <span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<p>运行结果为2，表明全局变量x的值根本没变。</p>
+<h2 id="apply调用"><a href="#apply调用" class="headerlink" title="apply调用"></a>apply调用</h2><p><code>apply()</code>&nbsp;是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　alert(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o=&#123;&#125;;</div><div class="line">o.x = <span class="number">1</span>;</div><div class="line">o.m = test;</div><div class="line">o.m.apply(); <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<p>apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。</p>
+<p>如果把最后一行代码修改为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">o.m.apply(o); <span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<p>运行结果就变成了1，证明了这时this代表的是对象o<br>来源地址：<a href="http://www.jb51.net/article/41656.htm" target="_blank" rel="external">http://www.jb51.net/article/41656.htm</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">搭建hexo个人博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">this</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">this指向</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hexo/" class="article-tag-list-link color5">hexo</a>
+        			<a href="/categories/js-this/" class="article-tag-list-link color3">js-this</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://gj201314.github.io/2017/04/24/this详解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2017/04/20/gulp工具安装和使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          gulp工具安装和使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/24/this用法实例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">this用法实例</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  
+    <div class="duoshuo"></div>
+  
 
 
           </div>
@@ -253,9 +380,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
