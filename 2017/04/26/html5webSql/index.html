@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://gj201314.github.io/2017/04/26/html5webSql/index.html">
 <meta property="og:site_name" content="莫阡若的博客">
 <meta property="og:description" content="Web SQL 数据库 API 并不是 HTML5 规范的一部分，但是它是一个独立的规范，引入了一组使用 SQL 操作客户端数据库的 APIs。">
-<meta property="og:updated_time" content="2017-04-26T02:45:24.707Z">
+<meta property="og:updated_time" content="2017-05-11T03:39:38.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5web SQL">
 <meta name="twitter:description" content="Web SQL 数据库 API 并不是 HTML5 规范的一部分，但是它是一个独立的规范，引入了一组使用 SQL 操作客户端数据库的 APIs。">
@@ -202,7 +202,8 @@
 <p>更新指定的数据id也可以是动态的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.transaction(<span class="function"><span class="keyword">function</span>(<span class="params">tx</span>) </span>&#123;</div><div class="line">    tx.executeSql(<span class="string">'UPDATE LOGS SET log=\'www.w3cschool.cc\' WHERE id=?'</span>, [id]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h2 id="完整实例-1"><a href="#完整实例-1" class="headerlink" title="完整实例"></a>完整实例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>  </div><div class="line">      <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">         <span class="keyword">var</span> db = openDatabase(<span class="string">'mydb'</span>, <span class="string">'1.0'</span>, <span class="string">'Test DB'</span>, <span class="number">2</span> * <span class="number">1024</span> * <span class="number">1024</span>);</div><div class="line">         <span class="keyword">var</span> msg;</div><div class="line">         db.transaction(<span class="function"><span class="keyword">function</span> (<span class="params">tx</span>) </span>&#123;</div><div class="line">            tx.executeSql(<span class="string">'CREATE TABLE IF NOT EXISTS LOGS (id unique, log)'</span>);</div><div class="line">            tx.executeSql(<span class="string">'INSERT INTO LOGS (id, log) VALUES (1, "菜鸟教程")'</span>);</div><div class="line">            tx.executeSql(<span class="string">'INSERT INTO LOGS (id, log) VALUES (2, "www.runoob.com")'</span>);</div><div class="line">            msg = <span class="string">'&lt;p&gt;数据表已创建，且插入了两条数据。&lt;/p&gt;'</span>;</div><div class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'#status'</span>).innerHTML =  msg;</div><div class="line">         &#125;);</div><div class="line">         db.transaction(<span class="function"><span class="keyword">function</span> (<span class="params">tx</span>) </span>&#123;</div><div class="line">              tx.executeSql(<span class="string">'DELETE FROM LOGS  WHERE id=1'</span>);</div><div class="line">              msg = <span class="string">'&lt;p&gt;删除 id 为 1 的记录。&lt;/p&gt;'</span>;</div><div class="line">              <span class="built_in">document</span>.querySelector(<span class="string">'#status'</span>).innerHTML =  msg;</div><div class="line">         &#125;);</div><div class="line">         db.transaction(<span class="function"><span class="keyword">function</span> (<span class="params">tx</span>) </span>&#123;</div><div class="line">             tx.executeSql(<span class="string">'UPDATE LOGS SET log=\'www.w3cschool.cc\' WHERE id=2'</span>);</div><div class="line">              msg = <span class="string">'&lt;p&gt;更新 id 为 2 的记录。&lt;/p&gt;'</span>;</div><div class="line">              <span class="built_in">document</span>.querySelector(<span class="string">'#status'</span>).innerHTML =  msg;</div><div class="line">         &#125;);</div><div class="line">         db.transaction(<span class="function"><span class="keyword">function</span> (<span class="params">tx</span>) </span>&#123;</div><div class="line">            tx.executeSql(<span class="string">'SELECT * FROM LOGS'</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params">tx, results</span>) </span>&#123;</div><div class="line">               <span class="keyword">var</span> len = results.rows.length, i;</div><div class="line">               msg = <span class="string">"&lt;p&gt;查询记录条数: "</span> + len + <span class="string">"&lt;/p&gt;"</span>;</div><div class="line">               <span class="built_in">document</span>.querySelector(<span class="string">'#status'</span>).innerHTML +=  msg;</div><div class="line"></div><div class="line">               <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)&#123;</div><div class="line">                  msg = <span class="string">"&lt;p&gt;&lt;b&gt;"</span> + results.rows.item(i).log + <span class="string">"&lt;/b&gt;&lt;/p&gt;"</span>;</div><div class="line">                  <span class="built_in">document</span>.querySelector(<span class="string">'#status'</span>).innerHTML +=  msg;</div><div class="line">               &#125;</div><div class="line">            &#125;, <span class="literal">null</span>);</div><div class="line">         &#125;);</div><div class="line">      <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"status"</span> <span class="attr">name</span>=<span class="string">"status"</span>&gt;</span>状态信息<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://www.runoob.com/try/try.php?filename=tryhtml5_websql2" target="_blank" rel="external">尝试一下</a></p>
-<p>来源地址：<a href="http://www.runoob.com/html/html5-web-sql.html" target="_blank" rel="external">http://www.runoob.com/html/html5-web-sql.html</a></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tx.executeSql(<span class="string">'DELETE FROM LOGS'</span>); <span class="comment">//删除表内所有数据</span></div><div class="line">tx.executeSql(<span class="string">'DROP TABLE LOGS'</span>); <span class="comment">//删除表</span></div></pre></td></tr></table></figure>
+<p>在chrome浏览器里，sql语句大小写都可以，例如：DELETE FROM LOGS可以写成 delete from logs。<br>来源地址：<a href="http://www.runoob.com/html/html5-web-sql.html" target="_blank" rel="external">http://www.runoob.com/html/html5-web-sql.html</a></p>
 
       
 
@@ -457,14 +458,6 @@ var uyan_config = {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html5</a>
               </li>
              
@@ -473,23 +466,15 @@ var uyan_config = {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">搭建hexo个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Web SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web Socket</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Web Storage</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,11 +486,31 @@ var uyan_config = {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">搭建hexo个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Web Storage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web Socket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">npm使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">http状态码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,10 +523,6 @@ var uyan_config = {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">this用法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">http状态码</a>
               </li>
              
               <li class="article-tag-list-item">
