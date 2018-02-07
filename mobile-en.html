@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+	<meta name="keywords" content="链壹科技,区块链" />
+    <title>链壹科技</title>
+    <link rel="shortcut icon" href="bitbug_favicon.ico" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="" />
+    <script>
+        function resize(){
+            //将布局视口大小设为设备像素尺寸
+            var scale = 1 / window.devicePixelRatio;
+            document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+            //动态设置html标签的font-size值,并按照设计图的尺寸/100。例如：750的设计图得到的值是7.5;做页面是测量设计图的px尺寸除以100得到rem尺寸;和淘宝的做法一样，文字字体大小不要使用rem换算
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+        };
+        resize();
+        window.onresize = resize;
+    </script>
+	<link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+</head>
+<body class="lang-en">
+<!-- 头部 -->
+<header id="header">
+    <div class="logo"><img src="./images/chainsone.com-active.png" alt=""></div>
+    <div class="menu">
+        <span class="menu-icon"></span>
+        <ul class="menu-list">
+            <li><a data-href="#home">home page</a></li>
+            <li><a data-href="#service">Product service</a></li>
+            <li><a data-href="#blockChain">Block chain</a></li>
+            <li><a data-href="#propagate">About us</a></li>
+        </ul>
+    </div>
+    <div class="lang"><a href="/mobile.html"><img src="./images/mobile/cn.png" alt=""></a></div>
+</header>
+<div id="home">
+    <!-- banner -->
+    <div id="banner">
+        <div class="swiper-container" id="bannerSlide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/mobile/slide1-en.png" alt=""></div>
+              <div class="swiper-slide"><img src="./images/mobile/slide2-en.png" alt=""></div>
+            </div>
+        <div class="swiper-button-next ban-next"></div>
+        <div class="swiper-button-prev ban-prev"></div>
+      </div>
+    </div>
+    <!-- 优势 -->
+    <div class="effect">
+        <ul class="clearfix">
+            <li>
+                <div class="thumb-box security"></div>
+                <div class="effect-title">Safety reinforcement</div>
+                <div class="effect-introduce">Support country dense algorithm and domestic
+    software and hardware</div>
+            </li>
+            <li>
+                <div class="thumb-box arrange"></div>
+                <div class="effect-title">Intelligent contract
+    arrangement</div>
+                <div class="effect-introduce">Strong as a shield and
+    safe and safe</div>
+            </li>
+            <li>
+                <div class="thumb-box validate"></div>
+                <div class="effect-title">Intelligent contract
+    verification</div>
+                <div class="effect-introduce">Strong as a shield and
+    safe and safe</div>
+            </li>
+            <li>
+                <div class="thumb-box conceal"></div>
+                <div class="effect-title">Privacy protection</div>
+                <div class="effect-introduce">Ensure that the data is visibleonly by the relevant party<br />Not only to protect privacy, but also to meet the 
+    requirements of supervision</div>
+            </li>
+            <li>
+                <div class="thumb-box control"></div>
+                <div class="effect-title">Real time control</div>
+                <div class="effect-introduce">Rich management functions 
+    and visual monitoring</div>
+            </li>
+            <li>
+                <div class="thumb-box algorithm"></div>
+                <div class="effect-title">Efficient consensus
+    algorithm</div>
+                <div class="effect-introduce">Increase the throughput<br />
+                    and reliability<br />
+                    Meet the vast majority of 
+                    financial application scenarios
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 产品服务 -->
+<div class="service" id="service">
+    <div class="service-title">
+        <img src="./images/service-title-en.png" alt="">
+    </div>
+    <div class="service-list">
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser011.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>Digital asset management</h3>
+                <div class="tags">
+                    <span>Total amount constant</span>
+                    <span>Multi Chain interoperability</span>
+                    <span>Asset anchoring</span>
+                    <span>multicurrency</span>
+                </div>
+                <p>One digital asset management is the whole life cycle management service for digital assets. Including digital asset information management, digital asset query, digital asset receiving, digital asset return borrowed, digital asset allocation, digital assets scrapped, digital asset maintenance, digital asset inventory, digital asset verification, digital financial check, data processing, data management, statistical reports, system management and rights management and other functions..</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser022.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>Superconducting network</h3>
+                <div class="tags">
+                    <span>Two generation block chain products</span>
+                    <span>Support multiple digital asset identification system</span>
+                    <span>High concurrent logic chain mechanism</span>
+                    <span>Support multi asset high real time transaction</span>
+                </div>
+                <p>Superconducting network is an efficient concurrent circulation system built by chain one technology. On the chain one superconducting network, all nodes from all over the world operate orderly. The average transfer speed of each asset is more than one hundred thousand times per second, and there is no loss in circulation process. At present, the chain one superconducting network has already had the concurrency of professional financial institutions, and it is safe and reliable.</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser033.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>Intelligent contract</h3>
+                <div class="tags">
+                    <span>Guarantee the reliability and safety of the contract</span>
+                    <span>There is no need for any third party trusteeship to intervene</span>
+                    <span>Automation of contract processing</span><br />
+                    <span>The contract party can almost do zero dispute</span>
+                    <span>Improve the efficiency of contract execution and save the cost</span>
+                </div>
+                <p>Chain one intelligent contract is our company based on the two generation block chain platform is developing a built-in module to achieve automatic control of the transfer of assets. The contract makes the contract process intelligent automation, because it does not need any third party custodian intervention, so as to improve contract enforcement efficiency, saving the cost of any party or a contract party, in terms of the contract before failure cannot control or change the assets, to ensure the reliability and safety of the contract, the contractor may be almost zero the dispute.</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser044.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>Credit collection system</h3>
+                <div class="tags">
+                    <span>Credit collection system</span>
+                    <span>exchange</span>
+                    <span>Purse application</span>
+                    <span>Registration of the regulatory chain</span>
+                    <span>Public chain</span>
+                    <span>identity authentication</span>
+                    <span>Cross chain proof of abnormal transaction</span>
+                    <span>Private chain</span><br />
+                    <span>Address interconnect</span>
+                    <span>Identity, address</span>
+                    <span>Standardized trust</span>
+                </div>
+                <p>Chain one technology has been researched and developed in the two generation block chain area. Many applications have been carried out in the field of asset digital application. We find that credit information service is the infrastructure of block chain and cross chain application. The nature of demand across chain is used to establish the mechanism of trust service, service object among application subject, provide confirmation of identity, provide verification of the address, transactions, books, secret key, the abnormal provide traceability, provide services for sharing cooperation trust. For the application subject of block chain, it provides the service of real name authentication, cross chain sharing and so on.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 区块链 -->
+<div class="blockChain" id="blockChain">
+    <img src="./images/mobile/blockChain-img-en.png" alt="">
+</div>
+<!-- 团队介绍 -->
+<div class="team">
+    <div class="wrap">
+        <div class="team-title"><img src="./images/team-title-en.png" alt=""></div>
+        <div class="team-introduce">
+            <h2>CHAINSONE</h2>
+            <p>Our team members come from<br />
+            An earlier group of bitcoin technology enthusiasts and supporters<br />
+            The team members are from the well-known Internet Co in China<br />
+            From 2013<br />
+            We build and maintain the volume of over billion yuan in the day<br />
+            Trading platform, cooperative R & D investment digital asset markets over 100.</p>
+        </div>
+    </div>
+</div>
+<!-- tip -->
+<div class="tip">
+    block chain project management housekeeper
+</div>
+<!-- 宣传 -->
+<div class="propagate" id="propagate">
+    <div class="propagate-box">
+        <div class="logo"><img src="./images/chainsone.com.png" alt=""></div>
+        <div class="propagate-l">
+            <h3>Contact us</h3>
+            <<p>We don't have a wide range of business, but we are professional. On the treasure land of the block<br />
+            treasure<br />
+            We focus on solving the problem of each user who cares about the block chain.</p>
+            <p>If you are interested in our products and services, you can contact us through the following ways, or you can scan the two-dimensional code below the website and pay attention to our WeChat public number.</p>
+            <div class="propagate-info">
+                <p><i class="date-icon"></i>Service time：Mon-Fri 9:00-18:00</p>
+                <p><i class="email-icon"></i>Mailbox：bd@chainsone.com</p>
+            </div>
+        </div>
+        <div class="qr-more">
+            <img src="./images/qr-code.png" alt="">
+            <p>Understand more</p>
+        </div>
+    </div>
+</div>
+<!-- 许可 -->
+<div class="permit">No. 18005091, Beijing ICP</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script>
+$('.menu-icon').on("touchstart", function(e) {
+   if($(this).siblings('ul').hasClass('active')){
+     $(this).siblings('ul').removeClass('active');
+     setTimeout(function(){
+        $('.menu-list').removeClass('show');
+     },300);
+   }else{
+    $(this).siblings('ul').addClass('show');
+     setTimeout(function(){
+        $('.menu-list').addClass('active');
+     },300);
+   };
+});
+$(document).on("touchstart", function(e) {
+    if($('.menu-list').hasClass('active')){
+        $('.menu-list').removeClass('active');
+        setTimeout(function(){
+            $('.menu-list').removeClass('show');
+        },300);
+    };
+});
+$('.menu-list li').on("touchstart", function(e) {  
+   location.href = location.origin+location.pathname+$(this).find('a').attr('data-href');
+   if($(this).parents('ul').hasClass('active')){
+     $(this).parents('ul').removeClass('active');
+     setTimeout(function(){
+        $('.menu-list').removeClass('show');
+     },300);
+   }else{
+    $(this).parents('ul').addClass('show');
+     setTimeout(function(){
+        $('.menu-list').addClass('active');
+     },300);
+   };
+});
+var mySwiper = new Swiper('#bannerSlide',{
+    loop: true,
+    speed:600,
+    grabCursor : true,
+    parallax:true,
+    autoplay:{
+      delay: 3000,
+    },
+    navigation: {
+      nextEl: '.ban-next',
+      prevEl: '.ban-prev',
+    }
+});
+</script>
+</body>
+</html>

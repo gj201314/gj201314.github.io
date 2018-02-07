@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+	<meta name="keywords" content="链壹科技,区块链" />
+    <title>链壹科技</title>
+    <link rel="shortcut icon" href="bitbug_favicon.ico" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="" />
+    <script>
+        function resize(){
+            //将布局视口大小设为设备像素尺寸
+            var scale = 1 / window.devicePixelRatio;
+            document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+            //动态设置html标签的font-size值,并按照设计图的尺寸/100。例如：750的设计图得到的值是7.5;做页面是测量设计图的px尺寸除以100得到rem尺寸;和淘宝的做法一样，文字字体大小不要使用rem换算
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+        };
+        resize();
+        window.onresize = resize;
+    </script>
+	<link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+</head>
+<body>
+<!-- 头部 -->
+<header id="header">
+    <div class="logo"><img src="./images/chainsone.com-active.png" alt=""></div>
+    <div class="menu">
+        <span class="menu-icon"></span>
+        <ul class="menu-list">
+            <li><a data-href="#home">首页</a></li>
+            <li><a data-href="#service">产品服务</a></li>
+            <li><a data-href="#blockChain">区块链</a></li>
+            <li><a data-href="#propagate">关于我们</a></li>
+        </ul>
+    </div>
+    <div class="lang"><a href="/mobile-en.html"><img src="./images/mobile/en.png" alt=""></a></div>
+</header>
+<div id="home">
+    <!-- banner -->
+    <div id="banner">
+        <div class="swiper-container" id="bannerSlide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/mobile/slide1.png" alt=""></div>
+              <div class="swiper-slide"><img src="./images/mobile/slide2.png" alt=""></div>
+            </div>
+        <div class="swiper-button-next ban-next"></div>
+        <div class="swiper-button-prev ban-prev"></div>
+      </div>
+    </div>
+    <!-- 优势 -->
+    <div class="effect">
+        <ul class="clearfix">
+            <li>
+                <div class="thumb-box security"></div>
+                <div class="effect-title">安全加固</div>
+                <div class="effect-introduce">支持国密算法和国产化软硬件</div>
+            </li>
+            <li>
+                <div class="thumb-box arrange"></div>
+                <div class="effect-title">智能合约编排</div>
+                <div class="effect-introduce">坚强如盾 安全放心</div>
+            </li>
+            <li>
+                <div class="thumb-box validate"></div>
+                <div class="effect-title">智能合约验证</div>
+                <div class="effect-introduce">坚强如盾 安全放心</div>
+            </li>
+            <li>
+                <div class="thumb-box conceal"></div>
+                <div class="effect-title">隐私保护</div>
+                <div class="effect-introduce">确保数据仅相关方可见<br />既保护隐私，又满足监管要求</div>
+            </li>
+            <li>
+                <div class="thumb-box control"></div>
+                <div class="effect-title">实时把控</div>
+                <div class="effect-introduce">丰富的管理功能和可视化监控</div>
+            </li>
+            <li>
+                <div class="thumb-box algorithm"></div>
+                <div class="effect-title">高效共识算法</div>
+                <div class="effect-introduce">提升吞吐率和可靠性<br />满足绝大多数金融应用场景</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 产品服务 -->
+<div class="service" id="service">
+    <div class="service-title">
+        <img src="./images/service-title.png" alt="">
+    </div>
+    <div class="service-list">
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser011.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>数字资产管理</h3>
+                <div class="tags">
+                    <span>总量恒定</span>
+                    <span>多链互通</span>
+                    <span>资产锚定</span>
+                    <span>多币种</span>
+                </div>
+                <p>链壹数字资产管理是针数字化资产的全生命周期管理服务。包括数字资产信息管理、数字资产查询、数字资产领用、数字资产借用归还、数字资产调拨、数字资产报废、数字资产维修、数字资产盘点、数字资产核查、数字财务核对、数据处理、基础数据管理、统计报表、系统管理和权限管理等功能。</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser022.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>超导网络</h3>
+                <div class="tags">
+                    <span>二代区块链产品</span>
+                    <span>支撑多元数字资产标识系统</span><br />
+                    <span>高并发的逻辑链机制</span>
+                    <span>支撑多资产高并发实时交易</span>
+                </div>
+                <p>超导网络是链壹科技构建的高效并发流转体系。在链壹超导网络上，来自全球的各个节点有序运行，平均每种资产的转账速度在每秒十万次以上，且流转过程中畅通无损耗。目前，链壹超导网络已具备专业金融机构的并发量，安全可靠。</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser033.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>智能合约</h3>
+                <div class="tags">
+                    <span>保证了合约的可靠性及安全性</span>
+                    <span>合约方几乎可以做到零纠纷</span><br />
+                    <span>不需要任何第三方托管机构介入</span>
+                    <span>合约处理过程自动化</span><br />
+                    <span>提高合约执行效率，节省费用</span>
+                </div>
+                <p>链壹智能合约是我们公司基于二代区块链平台正在研发的内置模块，实现自动化的掌控资产的转移。智能合约使得合约处理过程自动化，由于不需要任何第三方托管机构介入，从而提高合约执行效率，节省费用，任何相关方或合约的一方，在合约条款失效前都无法控制或更改资产，保证了合约的可靠性及安全性，使合约方几乎可以做到零纠纷。</p>
+            </div>
+        </div>
+        <div class="service-box">
+            <div class="ser-thumb"><div class="bd"><img src="./images/ser044.png" alt=""></div></div>
+            <div class="ser-info">
+                <h3>征信系统</h3>
+                <div class="tags">
+                    <span>征信系统</span>
+                    <span>交易所</span>
+                    <span>钱包应用</span>
+                    <span>监管链的登记</span>
+                    <span>公有链</span>
+                    <span>身份认证</span>
+                    <span>异常交易的跨链举证</span>
+                    <span>私有链</span><br />
+                    <span>地址互联</span>
+                    <span>身份   、地址</span>
+                    <span>的标准化信任</span>
+                </div>
+                <p>链壹科技持续在二代区块链领域进行研发，在资产数字化应用领域开展多项应用，我们发现征信服务是区块链跨链应用的基础设施。跨链应用的本质需求是，在多应用主体之间建立服务对象的信任服务机制，对身份提供确认，对地址、交易、账本、秘钥提供验证，对异常提供追溯，对信任服务提供共享协作。面向区块链应用主体，提供实名认证、跨链共享等服务。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 区块链 -->
+<div class="blockChain" id="blockChain">
+    <img src="./images/mobile/blockChain-img.png" alt="">
+</div>
+<!-- 团队介绍 -->
+<div class="team">
+    <div class="wrap">
+        <div class="team-title"><img src="./images/team-title.png" alt=""></div>
+        <div class="team-introduce">
+            <h2>链壹科技</h2>
+            <p>我们的团队成员来自于<br />
+            较早一群比特币技术爱好者和支持者<br />
+            团队成员均来自于国内知名互联网公司<br />
+            从2013年开始<br />
+            我们架构以及维护过日交易量过亿元的<br />
+            交易平台、合作研发投入市场的数字资产过百例。</p>
+        </div>
+    </div>
+</div>
+<!-- tip -->
+<div class="tip">
+    您的区块链方案管理专家
+</div>
+<!-- 宣传 -->
+<div class="propagate" id="propagate">
+    <div class="propagate-box">
+        <div class="logo"><img src="./images/chainsone.com.png" alt=""></div>
+        <div class="propagate-l">
+            <h3>联系我们</h3>
+            <p>我们业务范围不广泛，但是我们专业。在区块链这块宝地上<br />我们专注于解决每一个关心区块链的用户提出的问题</p>
+            <p>如果您对我们的产品和服务感兴趣，可以通过以下方式联系我们，也可以扫一扫网站下方的二维码关注我们的微信公众号。</p>
+            <div class="propagate-info">
+                <p><i class="date-icon"></i>服务时间：周一至周五 9:00-18:00</p>
+                <p><i class="email-icon"></i>邮箱：bd@chainsone.com</p>
+            </div>
+        </div>
+        <div class="qr-more">
+            <img src="./images/qr-code.png" alt="">
+            <p>了解更多</p>
+        </div>
+    </div>
+</div>
+<!-- 许可 -->
+<div class="permit">京ICP备18005091号</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script>
+$('.menu-icon').on("touchstart", function(e) {
+   if($(this).siblings('ul').hasClass('active')){
+     $(this).siblings('ul').removeClass('active');
+     setTimeout(function(){
+        $('.menu-list').removeClass('show');
+     },300);
+   }else{
+    $(this).siblings('ul').addClass('show');
+     setTimeout(function(){
+        $('.menu-list').addClass('active');
+     },300);
+   };
+});
+$(document).on("touchstart", function(e) {
+    if($('.menu-list').hasClass('active')){
+        $('.menu-list').removeClass('active');
+        setTimeout(function(){
+            $('.menu-list').removeClass('show');
+        },300);
+    };
+});
+$('.menu-list li').on("touchstart", function(e) {  
+   location.href = location.origin+location.pathname+$(this).find('a').attr('data-href');
+   if($(this).parents('ul').hasClass('active')){
+     $(this).parents('ul').removeClass('active');
+     setTimeout(function(){
+        $('.menu-list').removeClass('show');
+     },300);
+   }else{
+    $(this).parents('ul').addClass('show');
+     setTimeout(function(){
+        $('.menu-list').addClass('active');
+     },300);
+   };
+});
+var mySwiper = new Swiper('#bannerSlide',{
+    loop: true,
+    speed:600,
+    grabCursor : true,
+    parallax:true,
+    autoplay:{
+      delay: 3000,
+    },
+    navigation: {
+      nextEl: '.ban-next',
+      prevEl: '.ban-prev',
+    }
+});
+</script>
+</body>
+</html>
