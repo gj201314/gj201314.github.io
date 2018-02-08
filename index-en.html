@@ -24,10 +24,10 @@
         <!-- 导航 -->
         <div class="navbar fr">
             <ul>
-                <li><a href="#home">home page</a></li>
-                <li><a href="#service">Product service</a></li>
-                <li><a href="#blockChain">block chain</a></li>
-                <li><a href="#propagate">About us</a></li>
+                <li><a data-href="#home">home page</a></li>
+                <li><a data-href="#service">Product service</a></li>
+                <li><a data-href="#blockChain">block chain</a></li>
+                <li><a data-href="#propagate">About us</a></li>
             </ul>
         </div>
     </div>
@@ -193,7 +193,7 @@
 			<div class="hive-b1 hive-box"></div>
 			<div class="hive-b2 hive-box"></div>
 		</div>
-        <div class="lj-more"><img src="./images/lj-more-en.png" class="enImg" alt=""></div>
+        <!-- <div class="lj-more"><img src="./images/lj-more-en.png" class="enImg" alt=""></div> -->
 	</div>
 </div>
 <!-- 团队介绍 -->
@@ -305,6 +305,8 @@ if(location.hash==''){
     })
 };
 navLi.click(function(){
+	var than = $(this).find('a').attr('data-href');
+	$("html,body").animate({"scrollTop":$(than).offset().top});
     $(this).addClass('active').siblings().removeClass('active');
 });
 var mySwiper = new Swiper('#bannerSwiper',{
@@ -330,7 +332,7 @@ $(window).on('scroll',function(){
     };
 	navLi.each(function(ind,ele){
 		var _id = $(ele).find('a').attr('href');
-		var _h = $(_id).offset().top+$(_id).height();
+		var _h = $(_id).offset().top+$(_id).height()+100;
 		if(_h>=$(window).scrollTop()){
 			$(ele).addClass('active').siblings().removeClass('active');
 			return false;
