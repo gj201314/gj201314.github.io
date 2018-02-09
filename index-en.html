@@ -326,7 +326,7 @@ var mySwiper = new Swiper('#bannerSwiper',{
       prevEl: '.arrow-left',
     }
 });
-/**$(window).on('scroll',function(){
+$(window).on('scroll',function(){
     var offsetTop = $('#banner').height();
     var $topbar = $('.topbar');
     if($(this).scrollTop()>offsetTop){
@@ -336,13 +336,13 @@ var mySwiper = new Swiper('#bannerSwiper',{
     };
 	navLi.each(function(ind,ele){
 		var _id = $(ele).find('a').attr('data-href');
-		var _h = $(_id).offset().top+$(_id).height()==0?$(_id).offset().top+$(_id).height():$(_id).offset().top+$(_id).height()-100;
-		if(_h>=$(window).scrollTop()){
+		var _h = $(_id).offset().top+$(_id).outerHeight()-100;
+		if(_h>$(window).scrollTop()){
 			$(ele).addClass('active').siblings().removeClass('active');
 			return false;
 		};
 	});
-});**/
+});
 </script>
 </body>
 </html>
