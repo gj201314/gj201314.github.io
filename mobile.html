@@ -222,7 +222,12 @@ $(document).on("touchstart", function(e) {
     };
 });
 $('.menu-list li').on("touchstart", function(e) {  
-   location.href = location.origin+location.pathname+$(this).find('a').attr('data-href');
+   var than = $(this).find('a').attr('data-href');
+	if($(than).offset().top==0){
+		$("html,body").animate({"scrollTop":0},500);
+	}else{
+		$("html,body").animate({"scrollTop":$(than).offset().top-$('#header').height()},500);
+	};
    if($(this).parents('ul').hasClass('active')){
      $(this).parents('ul').removeClass('active');
      setTimeout(function(){
