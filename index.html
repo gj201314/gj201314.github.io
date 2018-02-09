@@ -318,7 +318,7 @@ $(window).on('scroll',function(){
     };
 	navLi.each(function(ind,ele){
 		var _id = $(ele).find('a').attr('data-href');
-		var _h = $(_id).offset().top+$(_id).height()+100;
+		var _h = $(_id).offset().top+$(_id).height()-100;
 		if(_h>=$(window).scrollTop()){
 			$(ele).addClass('active').siblings().removeClass('active');
 			return false;
