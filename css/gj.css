@@ -1,0 +1,44 @@
+.js-overlay,.btnctn  {
+  z-index: 5 !important;
+}
+.js-header-menu {
+  z-index: 6 !important;
+}
+.article-title {
+  color: #574c4c;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px !important;
+}
+#gj-imglist {
+  padding: 30px 7.6923%;
+}
+#gj-imglist .ified {
+  margin-bottom: 15px;
+}
+#gj-imglist .ified a {
+  padding: 0 10px;
+  margin: 0 10px;
+  color: #08c;
+  float: left;
+}
+#gj-imglist a.active {
+  background: #4d4d4d;
+  color:#fff;
+  border-radius: 0.5rem;
+}
+#gj-imglist span {
+  float: left;
+}
+#gj-imglist .btn-source {
+  font-size: 14px;
+  height: 1rem;
+  padding: 0 10px;
+  border: 1px #08c solid;
+  border-radius: 0.3rem;
+}
+@media screen and (max-width: 800px){
+  #gj-imglist {
+    padding: 10px;
+  }
+}
