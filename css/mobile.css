@@ -21,7 +21,7 @@ button,input {
 	border:none;
 }
 body {
-	font-size:20px;
+	font-size:0.2rem;
 	font-family: "微软雅黑";
 	background: #fff;
 }
@@ -121,7 +121,7 @@ body {
 }
 #header .menu ul li {
 	border-bottom:0.01rem #f3f3f3 solid;
-	font-size:22px;
+	font-size:0.22rem;
 	padding-left: 15px; 
 }
 #header .menu ul li a {
@@ -216,7 +216,7 @@ body {
 	cursor: pointer;
 }
 .effect li .effect-title {
-	font-size:30px;
+	font-size:0.3rem;
 	line-height:initial;
 	color:#484848;
 	font-weight: bold;
@@ -225,8 +225,8 @@ body {
 }
 .effect li .effect-introduce {
 	padding-top: 0.05rem;
-	font-size:22px;
-	line-height: 28px;
+	font-size:0.22rem;
+	line-height:0.28rem;
 	color:#8f8f8f;
 }
 
@@ -271,30 +271,30 @@ body {
 	border:0.01rem #9c9c9c solid;
 }
 .service .service-list .service-box .ser-info h3{
-	font-size: 24px;
-	line-height: 24px;
+	font-size:0.24rem;
+	line-height:0.24rem;
 	color:#969696;
 }
 .service .service-list .service-box .ser-info {
 	font-family: "微软雅黑";
 }
 .service .service-list .service-box .ser-info .tags {
-	font-size:12px;
+	font-size:0.12rem;
 	color:#4fb5bf;
 	padding-top:0.2rem;
 	font-weight: bold;
 }
 .service .service-list .service-box .ser-info .tags span {
 	margin-right:0.2rem;
-	line-height:35px;
+	line-height:0.35rem;
 }
 .service .service-list .service-box .ser-info .tags span:last-child {
 	margin-right: 0;
 }
 .service .service-list .service-box .ser-info p {
-	line-height: 36px;
+	line-height:0.36rem;
 	color:#9a9a9a;
-	font-size:12px;
+	font-size:0.12rem;
 	padding-top:5px;
 }
 
@@ -327,12 +327,12 @@ body {
 }
 .team .team-introduce h2 {
 	color:#5f5f5f;
-	font-size:28px;
+	font-size:0.28rem;
 }
 .team .team-introduce p {
 	color:#6d6d6d;
-	font-size: 13px;
-	line-height: 38px;
+	font-size:0.12rem;
+	line-height:0.38rem;
 	padding-top:0.4rem;
 }
 
@@ -367,21 +367,21 @@ body {
 }
 .propagate .propagate-box .propagate-l h3 {
 	color:#fff;
-	font-size: 22px;
+	font-size:0.22rem;
 	margin-bottom: 0.3rem;
 }
 .propagate .propagate-box .propagate-l p {
-	font-size: 12px;
+	font-size:0.12rem;
 	color:#fff;
-	line-height: 30px;
+	line-height:0.3rem;
 	margin-bottom: 0.3rem;
 }
 .propagate .propagate-box .propagate-l .propagate-info {
-	font-size: 18px;
+	font-size:0.18rem;
 }
 .propagate .propagate-box .propagate-l .propagate-info p {
-	line-height: 31px;
-	font-size: 14px;
+	line-height:0.31rem;
+	font-size:0.14rem;
 }
 .propagate .propagate-l .propagate-info p i {
 	width: 31px;
@@ -405,7 +405,7 @@ body {
 	height: auto;
 }
 .propagate .propagate-box .qr-more p {
-	font-size:14px;
+	font-size:0.14rem;
 	padding-top:15px;
 	text-align: center;
 }
@@ -415,7 +415,7 @@ body {
 	text-align: center;
 	padding:0.5rem 0;
 	/*line-height: 0.94rem;*/
-	font-size: 14px;
+	font-size:0.14rem;
 	background: #1c1c1c;
 	color:#fff;
 	margin-top: -5px;
@@ -423,7 +423,7 @@ body {
 }
 /*英文*/
 .tip {
-	font-size: 26px;
+	font-size:0.26rem;
 	overflow: hidden;
 }
 
