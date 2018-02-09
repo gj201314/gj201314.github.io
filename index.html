@@ -292,7 +292,11 @@ if(location.hash==''){
 };
 navLi.click(function(){
 	var than = $(this).find('a').attr('data-href');
-	$("html,body").animate({"scrollTop":$(than).offset().top},500)
+	if($(than).offset().top==0){
+		$("html,body").animate({"scrollTop":0},500);
+	}else{
+		$("html,body").animate({"scrollTop":$(than).offset().top-100},500);
+	};
     $(this).addClass('active').siblings().removeClass('active');
 });
 var mySwiper = new Swiper('#bannerSwiper',{
@@ -318,7 +322,7 @@ $(window).on('scroll',function(){
     };
 	navLi.each(function(ind,ele){
 		var _id = $(ele).find('a').attr('data-href');
-		var _h = $(_id).offset().top+$(_id).height()-100;
+		var _h = $(_id).offset().top+$(_id).height()==0?$(_id).offset().top+$(_id).height():$(_id).offset().top+$(_id).height()-100;
 		if(_h>=$(window).scrollTop()){
 			$(ele).addClass('active').siblings().removeClass('active');
 			return false;
